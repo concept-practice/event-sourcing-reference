@@ -7,7 +7,7 @@ namespace EventSourcingReference.EventSourcing
     public abstract class AggregateRoot : Entity
     {
         private readonly IList<DomainEvent> _notifications;
-        public int CurrentEventVersion { get; private set; } = 0;
+        public int CurrentEventVersion { get; private set; }
         public IEnumerable<DomainEvent> Events => _notifications.AsEnumerable();
 
         protected AggregateRoot()
